@@ -1,20 +1,18 @@
 <html>
-<head>
-<title>Dheer's blog</title>
-</head>
-<body>
-<div>
-	<h1><a href="\">Welcome to my blog!!!</a></h1>
-	<strong>I am Dheer, a 3rd year student pursuing Computer Science and Physics at BITS-PILANI GOA Campus.</strong>
-</div>
-<div>
-	<p>published on: 1/1/2020
-	<h2><a href="\">First Post</a></h2>
-	<strong>Hey guys welcome to my blog. I will share all of my experiences and observations with you through this blog</strong>
+    <head>
+        <title>Dheer's blog</title>
+    </head>
+    <body>
+        <div>
+            <h1><a href="/">Welcome to my blog!!!!</a></h1>
+        </div>
 
-</div>
-<div>
-<p>published on: 1/1/20</p>
-</div>
-</body>
+        {% for post in posts %}
+            <div>
+            <p>{{post.published_date}}</p>
+            <h2><a href="/">{{post.title}}</a></h2>
+            <strong>{{post.text|linebreaksbr}}</strong>
+            </div>  
+        {% endfor %}
+    </body>
 </html>
